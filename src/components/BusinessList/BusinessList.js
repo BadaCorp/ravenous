@@ -1,15 +1,12 @@
 import './BusinessList.css';
 import Business from '../Business/Business';
 
-const BusinessList = () => {
+const BusinessList = ({businesses}) => {
     return (
         <div className="BusinessList">
-            <Business />
-            <Business />
-            <Business /> 
-            <Business /> 
-            <Business /> 
-            <Business /> 
+            {businesses.map(business => {
+                return <Business business={business} />
+            })}
         </div>
     );
 };
