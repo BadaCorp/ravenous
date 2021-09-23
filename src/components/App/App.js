@@ -29,6 +29,7 @@ const App = () => {
     <div className="App">
       <h1>ravenous</h1>
       <SearchBar />
+      <marquee style={{color: 'red'}}>Temporarily under Construction!</marquee>
       <BusinessList businesses={businesses} /> 
     </div>
   );
