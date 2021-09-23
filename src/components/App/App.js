@@ -29,7 +29,11 @@ const App = () => {
     <div className="App">
       <h1>ravenous</h1>
       <SearchBar />
-      <marquee style={{color: 'red'}}>Temporarily under Construction!</marquee>
+      <p style={{color: 'red', 
+                  textAlign: 'center',
+                }}>
+        Temporarily under Construction!
+      </p>
       <BusinessList businesses={businesses} /> 
     </div>
   );
