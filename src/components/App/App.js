@@ -32,7 +32,7 @@ const App = () => {
       <p style={{color: 'red', 
                   textAlign: 'center',
                 }}>
-        Temporarily under Construction!
+        const Temporarily down = &#123; <br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; reason : 'under Construction!' <br />&#125;
       </p>
       <BusinessList businesses={businesses} /> 
     </div>
