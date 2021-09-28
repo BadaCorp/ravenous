@@ -5,11 +5,6 @@ const SearchBar = ({searchYelp}) => {
     const [term, setTerm] = useState('');
     const [location, setLocation] = useState('');
     const [sortBy, setSortBy] = useState('best_match');
-    // const [sortByOptions, setSortByOptions] = useState({
-    //     'Best Match': 'best_match',
-    //     'Highest Rated': 'rating',
-    //     'Most Reviewed': 'review_count'
-    // });
 
     const sortByOptions = {
         'Best Match': 'best_match',
