@@ -23,12 +23,11 @@ const App = () => {
       else {
         setBusinesses([]);
         setError(true);
+        console.err(`Error: Search inputs are Invalid`)
       }
     })
-    .then((err) => {
-      console.log(`Error: Search inputs are ${err}`)
-    })
-    console.log('businessses: ', businesses);
+    .catch(err => console.log('Error: ', err));
+    //console.log('businessses: ', businesses);
   };
 
   return (
