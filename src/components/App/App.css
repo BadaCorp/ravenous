@@ -42,3 +42,12 @@ h1 {
   font-size: 1.8rem;
   color: #fff;
 }
+
+.error-msg {
+  padding: 2% 10%;
+  color: #ff0000;
+}
+
+.error-msg-center {
+  text-align: center;
+}
