@@ -1,21 +1,6 @@
 import './BusinessList.css';
 import Business from '../Business/Business';
 
-// type BusinessProps = {
-//     business: {
-//         id: string,
-//         imageSrc: string,
-//         name: string,
-//         address: string,
-//         city: string,
-//         state: string,
-//         zipCode: string,
-//         category: string,
-//         rating: number,
-//         reviewCount: number,
-//     },
-// };
-
 type BusinessesProps = {
     businesses: [
         business: {

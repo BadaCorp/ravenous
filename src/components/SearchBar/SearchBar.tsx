@@ -1,18 +1,22 @@
-import {useState} from 'react';
+import {SetStateAction, useState} from 'react';
 import './SearchBar.css';
 
-const SearchBar = ({searchYelp}) => {
+type SearchBarProps = {
+    searchYelp: any,
+}
+
+const SearchBar = ({searchYelp}: SearchBarProps) => {
     const [term, setTerm] = useState('');
     const [location, setLocation] = useState('');
     const [sortBy, setSortBy] = useState('best_match');
 
-    const sortByOptions = {
+    const sortByOptions: { [key: string]: any } = {
         'Best Match': 'best_match',
         'Highest Rated': 'rating',
         'Most Reviewed': 'review_count'
     };
 
-    const getSortByClass = (sortByOption) => {
+    const getSortByClass = (sortByOption: string) => {
         if(sortBy === sortByOption) {
             return 'active';
         }
@@ -21,26 +25,26 @@ const SearchBar = ({searchYelp}) => {
         }
     };
 
-    const handleSortByChange = (sortByOption) => {
+    const handleSortByChange = (sortByOption: string) => {
         setSortBy(sortByOption);
     };
 
-    const handleTermChange = (event) => {
+    const handleTermChange = (event: { target: { value: SetStateAction<string>; }; }) => {
         setTerm(event.target.value);
     };
 
-    const handleLocationChange = (event) => {
+    const handleLocationChange = (event: { target: { value: SetStateAction<string>; }; }) => {
         setLocation(event.target.value);
     };
 
-    const handleSearch = (event) => {
+    const handleSearch = (event: { preventDefault: () => void; }) => {
         searchYelp(term, location, sortBy);
         event.preventDefault();
     };
 
     const renderSortByOptions = () => {
         return Object.keys(sortByOptions).map((sortByOption) => {
-            let sortByOptionValue = sortByOptions[sortByOption];
+            let sortByOptionValue: any = sortByOptions[sortByOption];
             return <li 
                     className={getSortByClass(sortByOptionValue)} 
                     key={sortByOptionValue}
