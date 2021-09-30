@@ -14,9 +14,7 @@ const App = () => {
   }, []);
 
   const searchYelp = (term, location, sortBy) => {
-    // setBusinesses([]);
     Yelp.search(term, location, sortBy).then((business) => {
-      // console.log('business: ', business);
       if(business) {
         setBusinesses(business);
         setInputError(false);
@@ -45,10 +43,10 @@ const App = () => {
         <div className='error-msg'>
           <p className='error-msg-center'>
             The Yelp api does not support CORS. Please, make sure that you have temporarily enabled
-              &nbsp;<a href='https://cors-anywhere.herokuapp.com/corsdemo'>CORS</a>&nbsp;
+              &nbsp;<a href='https://cors-anywhere.herokuapp.com/corsdemo' target='_blank' rel="noreferrer">CORS</a>&nbsp;
               in your browser inorder to use this app by navigating to this
-              &nbsp;<a href='https://cors-anywhere.herokuapp.com/corsdemo'>link</a> and clicking on the 'Request temporary access to the demo server' button. For more information about CORS, click here:
-              &nbsp;<a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS'>Cross-Origin Resource Sharing (CORS)</a> 
+              &nbsp;<a href='https://cors-anywhere.herokuapp.com/corsdemo' target='_blank' rel="noreferrer">link</a> and clicking on the 'Request temporary access to the demo server' button. For more information about CORS, click here:
+              &nbsp;<a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS' target='_blank' rel="noreferrer">Cross-Origin Resource Sharing (CORS)</a> 
           </p>
         </div>: ''
       }

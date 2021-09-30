@@ -23,17 +23,14 @@ const SearchBar = ({searchYelp}) => {
 
     const handleSortByChange = (sortByOption) => {
         setSortBy(sortByOption);
-        console.log('sortByOption: ', sortByOption);
     };
 
     const handleTermChange = (event) => {
         setTerm(event.target.value);
-        console.log('Term: ', term);
     };
 
     const handleLocationChange = (event) => {
         setLocation(event.target.value);
-        console.log('Location: ', location);
     };
 
     const handleSearch = (event) => {
@@ -70,10 +67,12 @@ const SearchBar = ({searchYelp}) => {
                     onChange={handleLocationChange}
                 />
             </div>
+
             <div className="SearchBar-submit">
                 <a 
                     onClick={handleSearch}
-                    href='#dummyLink'>
+                    href='#ravenous'
+                >
                         Let's Go
                 </a>
             </div>
