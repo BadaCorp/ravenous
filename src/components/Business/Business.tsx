@@ -1,6 +1,21 @@
 import './Business.css';
 
-const Business = ({business}) => {
+type BusinessProps = {
+    business: {
+        id: string,
+        imageSrc: string,
+        name: string,
+        address: string,
+        city: string,
+        state: string,
+        zipCode: string,
+        category: string,
+        rating: number,
+        reviewCount: number,
+    },
+};
+
+const Business = ({business}: BusinessProps) => {
 
     return (
         <div className="Business">
