@@ -1,21 +1,11 @@
 import './Business.css';
+import {BusinessConfig} from '../App/App'
 
-type BusinessProps = {
-    business: {
-        id: string,
-        imageSrc: string,
-        name: string,
-        address: string,
-        city: string,
-        state: string,
-        zipCode: string,
-        category: string,
-        rating: number,
-        reviewCount: number,
-    },
-};
+interface BusinesssProps {
+    business: BusinessConfig;
+}
 
-const Business = ({business}: BusinessProps) => {
+const Business = ({business}: BusinesssProps) => {
 
     return (
         <div className="Business">

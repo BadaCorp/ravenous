@@ -4,8 +4,21 @@ import BusinessList from '../BusinessList/BusinessList';
 import SearchBar from '../SearchBar/SearchBar';
 import Yelp from '../../util/Yelp'
 
-const App = () => {
-  const [businesses, setBusinesses] = useState([]);
+export interface BusinessConfig {
+  id: string,
+  imageSrc: string,
+  name: string,
+  address: string,
+  city: string,
+  state: string,
+  zipCode: string,
+  category: string,
+  rating: number,
+  reviewCount: number,
+};
+
+export const App = () => {
+  const [businesses, setBusinesses] = useState<BusinessConfig[]>([]);
   const [inputError, setInputError] = useState(false);
   const [corsError, setCorsError] = useState(false); 
 
@@ -13,7 +26,7 @@ const App = () => {
     alert('Please go to this link below to temporarily enable CORS before using the app:\nhttps://cors-anywhere.herokuapp.com/corsdemo');
   }, []);
 
-  const searchYelp = (term, location, sortBy) => {
+  const searchYelp = (term:string, location:string, sortBy:string) => {
     Yelp.search(term, location, sortBy).then((business) => {
       if(business) {
         setBusinesses(business);
@@ -64,4 +77,4 @@ const App = () => {
   );
 };
 
-export default App;
+// export default App;

@@ -1,24 +1,13 @@
 import './BusinessList.css';
 import Business from '../Business/Business';
+import {BusinessConfig} from '../App/App'
 
-type BusinessesProps = {
-    businesses: [
-        business: {
-            id: string,
-            imageSrc: string,
-            name: string,
-            address: string,
-            city: string,
-            state: string,
-            zipCode: string,
-            category: string,
-            rating: number,
-            reviewCount: number,
-        },
-    ],
-};
+interface BusinessesListProps {
+    businesses: BusinessConfig[];
+  };
+  
 
-const BusinessList = ({businesses}: BusinessesProps) => {
+const BusinessList = ({businesses}: BusinessesListProps) => {
     return (
         <div className="BusinessList">
             {businesses.map((business, i) => {

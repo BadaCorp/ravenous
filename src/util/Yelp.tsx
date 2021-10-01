@@ -1,7 +1,17 @@
 const apiKey = 'CPCkBOEMDrCBr1oLQ5RSKh9jEGzmiIOirjlVfitBaSGvnwcHLmmSNQbWb5mLfmYc4YhqSMckgZe89dfKy-VCvtHxl_9n-P2QLSFqhOwvEV6IOVmiQpPcMEXvIbNSYXYx';
 
+interface Business {
+    id: string;
+    image_url: string;
+    name: string;
+    location: any;
+    categories: any;
+    rating: number;
+    review_count: number;
+};
+
 const yelp = {
-    async search(term, location, sortBy) {
+    async search(term:string, location:string, sortBy:string) {
         const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`, {
             headers: {
                 Authorization: `Bearer ${apiKey}`
@@ -9,7 +19,7 @@ const yelp = {
         });
         const jsonResponse = await response.json();
         if (jsonResponse.businesses) {
-            return jsonResponse.businesses.map(business => {
+            return jsonResponse.businesses.map((business: Business) => {
                 return {
                     'id': business.id,
                     'imageSrc': business.image_url,
