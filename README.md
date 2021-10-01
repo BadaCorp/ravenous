@@ -1,10 +1,8 @@
+<h1 style="font-weight:bold; text-align:center;">Ravenous</h1>
+
 [![](https://img.shields.io/badge/Chrome%20(CORS)-0.1.6-orange)](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf)
 [![](https://img.shields.io/badge/Mozilla%20(CORS)-18.11.13.2043-brightgreen)](https://addons.mozilla.org/en-CA/firefox/addon/cors-everywhere/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 [![](https://img.shields.io/badge/Edge%20(CORS)-0.1.6-blue)](https://microsoftedge.microsoft.com/addons/detail/allow-cors-accesscontro/bhjepjpgngghppolkjdhckmnfphffdag)
-
-
-
-<h1 style="text-align:center; font-weight:bold;">Ravenous</h1>
 
 Ravenous is a Codecademy Project of a React app that allows a user to search for restaurants at a location and sort the result (returned by Yelp API) by best match, highest rated, and most reviewed. 
 
@@ -34,6 +32,9 @@ Examples of a valid location include: Cancun, Toronto, Etobicoke, United States,
 You can also sort the result by best match, highest rated, and most reviewed. Don't forget to click on the "Let's Go" button after selecting the sorting criteria.
 
 ## Credits
-The project instructions where provided by Codecademy. However, instead of using class components, functional components where used to construct the entire app. Also, instead of using plain react, typescript was injected to make it easier to debug.
+- The project instructions where provided by Codecademy. However, instead of using class components, functional components where used to construct the entire app. Also, instead of using plain react, typescript was injected to make it easier to debug.
+
+- Most of the data is retrieve from [Yelp API](https://www.yelp.com/developers/documentation/v3)
+
 
 
