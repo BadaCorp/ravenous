@@ -4,7 +4,7 @@
 
 
 
-<h1 style="text-align:center; font-weight:bold">Ravenous</h1>
+<h1 style="text-align:center; font-weight:bold;">Ravenous</h1>
 
 Ravenous is a Codecademy Project of a React app that allows a user to search for restaurants at a location and sort the result (returned by Yelp API) by best match, highest rated, and most reviewed. 
 
