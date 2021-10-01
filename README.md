@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+[![](https://img.shields.io/badge/Chrome%20(CORS)-0.1.6-orange)](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf)
+[![](https://img.shields.io/badge/Mozilla%20(CORS)-18.11.13.2043-brightgreen)](https://addons.mozilla.org/en-CA/firefox/addon/cors-everywhere/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+[![](https://img.shields.io/badge/Edge%20(CORS)-0.1.6-blue)](https://microsoftedge.microsoft.com/addons/detail/allow-cors-accesscontro/bhjepjpgngghppolkjdhckmnfphffdag)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+
+<h1 style="text-align:center; font-weight:bold">Ravenous</h1>
+
+Ravenous is a Codecademy Project of a React app that allows a user to search for restaurants at a location and sort the result (returned by Yelp API) by best match, highest rated, and most reviewed. 
+
+## Demo
+Note: The Ravenous app relies on data from the [Yelp Fusion API](https://www.yelp.com/fusion). Unfortunately, the API does not support [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). In order for the Ravenous app to work properly, you will be prompted to navigate to this [link](https://cors-anywhere.herokuapp.com/corsdemo) and click the button to "request temporary access to the demo server".
+
+Alternatively, you can install extensions to allow CORS on your browser: [Chrome](https://chrome.google.com/webstore/search/cors?hl=en-US), [Mozilla](https://addons.mozilla.org/en-CA/firefox/search/?q=cors), [Edge](https://microsoftedge.microsoft.com/addons/search/cors?hl=en-US), etc. 
+
+Online: https://ravenous-yelp-like-clone.netlify.app/
+
+### Installation
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The command runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## How to use
 
-### `npm test`
+Once CORS is enabled in your browser, the app should work properly. You, can go ahead and input the name or type of a restaurant in the 'Search Business' input field. Then, input a location to search for these restaurants.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Examples of a valid Business include: Bread, Pizza, Mexican, KFC, Burgers, etc. 
 
-### `npm run build`
+Examples of a valid location include: Cancun, Toronto, Etobicoke, United States, Pembina Hwy etc.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can also sort the result by best match, highest rated, and most reviewed. Don't forget to click on the "Let's Go" button after selecting the sorting criteria.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Credits
+The project instructions where provided by Codecademy. However, instead of using class components, functional components where used to construct the entire app. Also, instead of using plain react, typescript was injected to make it easier to debug.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
