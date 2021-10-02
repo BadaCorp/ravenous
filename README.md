@@ -16,11 +16,11 @@ Online: https://ravenous-yelp-like-clone.netlify.app/
 
 ### Installation
 
-In the project directory, you can run:
+- `Clone` the app.
+- Navigate to the app directory.
+- Run the command `npm start` 
 
-#### `npm start`
-
-The command runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The command runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your favorite browser.
 
 ## How to use
 
