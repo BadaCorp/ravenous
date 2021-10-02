@@ -1,4 +1,4 @@
-import './Business.css';
+import './Business.scss';
 import {BusinessConfig} from '../App/App'
 
 interface BusinesssProps {

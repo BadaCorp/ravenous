@@ -1,4 +1,4 @@
-<h1 style="font-weight:bold; text-align:center;">Ravenous</h1>
+<h1 style="font-weight:bold;">Ravenous</h1>
 
 [![](https://img.shields.io/badge/Chrome%20(CORS)-0.1.6-orange)](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf)
 [![](https://img.shields.io/badge/Mozilla%20(CORS)-18.11.13.2043-brightgreen)](https://addons.mozilla.org/en-CA/firefox/addon/cors-everywhere/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)

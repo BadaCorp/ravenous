@@ -1,4 +1,4 @@
-import './BusinessList.css';
+import './BusinessList.scss';
 import Business from '../Business/Business';
 import {BusinessConfig} from '../App/App'
 

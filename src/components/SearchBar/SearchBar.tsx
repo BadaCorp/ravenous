@@ -1,5 +1,5 @@
 import {SetStateAction, useState} from 'react';
-import './SearchBar.css';
+import './SearchBar.scss';
 
 type SearchBarProps = {
     searchYelp: any,

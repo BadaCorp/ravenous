@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import './App.css';
+import './App.scss';
 import BusinessList from '../BusinessList/BusinessList';
 import SearchBar from '../SearchBar/SearchBar';
 import Yelp from '../../util/Yelp'
