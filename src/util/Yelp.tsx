@@ -4,8 +4,8 @@ interface Business {
     id: string;
     image_url: string;
     name: string;
-    location: any;
-    categories: any;
+    location: Record<string, any>;
+    categories: Record<string, any>[];
     rating: number;
     review_count: number;
 };
