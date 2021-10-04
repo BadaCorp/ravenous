@@ -7,7 +7,7 @@
 
 ## Table of contents
 * [Demo](#demo)
-** [Installation](#installation)
+  * [Installation](#installation)
 * [How to use](#how-to-use)
 * [Credits](#credits)
 * [Other Information](#other-information)
