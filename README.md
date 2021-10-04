@@ -9,8 +9,8 @@
 * [Demo](#demo)
   * [Installation](#installation)
 * [How to use](#how-to-use)
-* [Credits](#credits)
 * [Other Information](#other-information)
+* [Credits](#credits)
 
 Ravenous is a Codecademy Project of a React app that allows a user to search for businesses in a general location and sort the result (returned by Yelp API) by best match, highest rated, and most reviewed. 
 
