@@ -5,6 +5,13 @@
 [![](https://img.shields.io/badge/Edge%20(CORS)-0.1.6-blue)](https://microsoftedge.microsoft.com/addons/detail/allow-cors-accesscontro/bhjepjpgngghppolkjdhckmnfphffdag)
 [![](https://img.shields.io/badge/Codecademy-PRO-brightgreen)](https://www.codecademy.com/pro/membership?g_network=g&g_device=c&g_adid=528849219352&g_keyword=codecademy%20pro&g_acctid=243-039-7011&g_adtype=search&g_adgroupid=128133970788&g_keywordid=kwd-373216718809&g_campaign=INTL_Brand_Exact&g_campaignid=1726903838&utm_id=t_kwd-373216718809:ag_128133970788:cp_1726903838:n_g:d_c&utm_term=codecademy%20pro&utm_campaign=INTL_Brand_Exact&utm_source=google&utm_medium=paid-search&utm_content=528849219352&hsa_acc=2430397011&hsa_cam=1726903838&hsa_grp=128133970788&hsa_ad=528849219352&hsa_src=g&hsa_tgt=kwd-373216718809&hsa_kw=codecademy%20pro&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=EAIaIQobChMIuoznwrqq8wIVCWpvBB0ZigBvEAAYASABEgIn3vD_BwE)
 
+## Table of contents
+* [Demo](#demo)
+** [Installation](#installation)
+* [How to use](#how-to-use)
+* [Credits](#credits)
+* [Other Information](#other-information)
+
 Ravenous is a Codecademy Project of a React app that allows a user to search for businesses in a general location and sort the result (returned by Yelp API) by best match, highest rated, and most reviewed. 
 
 ## Demo
@@ -31,6 +38,9 @@ Examples of a valid Business include: Hair Salon, Pizza, Mexican, KFC, Mall, etc
 Examples of a valid location include: Cancun, Toronto, Etobicoke, United States, Pembina Hwy etc.
 
 You can also sort the result by best match, highest rated, and most reviewed. Don't forget to click on the "Let's Go" button after selecting the sorting criteria.
+
+## Other Information
+Due to [bayesian inference](https://en.wikipedia.org/wiki/Bayesian_inference), sorting by 'highest rated' does not work as a user would expect. This is so that a [business with 1 rating of 5 starts does not immediately jump to the top](https://github.com/Yelp/yelp-fusion/issues/24). 
 
 ## Credits
 - The project instructions where provided by Codecademy. However, instead of using class components, functional components where used to construct the entire app. Instead of using plain react, typescript was injected to make it easier to debug. Most css file while convert to Sass files. Also, Error messages where included to warn the user about CORS issues or some invalid inputs. 
