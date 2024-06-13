@@ -21,10 +21,10 @@ export interface BusinessConfig {
 export const App = () => {
   const [businesses, setBusinesses] = useState<BusinessConfig[]>([]);
   const [inputError, setInputError] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const searchYelp = (term: string, location: string, sortBy: string) => {
-    setLoading(true);
+    setIsLoading(true);
     Yelp.search(term, location, sortBy)
       .then((business) => {
         if (business) {
@@ -34,9 +34,11 @@ export const App = () => {
           setBusinesses([]);
           setInputError(true);
         }
+        setIsLoading(false);
       })
-      .catch((err) => {});
-    setTimeout(() => setLoading(false), 3000);
+      .catch((err) => {
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -44,7 +46,7 @@ export const App = () => {
       <h1>ravenous</h1>
       <SearchBar searchYelp={searchYelp} />
 
-      {loading && (
+      {isLoading && (
         <div
           style={{
             display: "flex",
