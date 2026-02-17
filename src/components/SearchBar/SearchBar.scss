@@ -1,97 +1,187 @@
 .SearchBar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-image: url('./background_search_desktop.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 25rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  overflow: hidden;
+  min-height: 23.5rem;
+  padding: 2.2rem clamp(1rem, 3.6vw, 2.2rem);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background:
+    linear-gradient(rgba(6, 18, 26, 0.55), rgba(8, 27, 35, 0.62)),
+    url("./background_search_desktop.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 26px 42px rgba(11, 27, 32, 0.28);
+  animation: panel-rise 0.65s ease-out both;
+}
+
+.SearchBar::before {
+  content: "";
+  position: absolute;
+  top: -28%;
+  right: -12%;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 162, 89, 0.28), transparent 62%);
+  pointer-events: none;
+}
+
+.SearchBar-eyebrow {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: rgba(255, 241, 219, 0.86);
+}
+
+.SearchBar h2 {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.55rem);
+  line-height: 1.1;
+  color: #fff9ef;
+}
+
+.SearchBar-sort-options ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  color: #ffffff;
+}
+
+.SearchBar-sort-options li {
+  cursor: pointer;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  line-height: 1.13;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.83rem;
+  background: rgba(7, 20, 29, 0.2);
+  backdrop-filter: blur(2px);
+  transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.SearchBar-sort-options li:hover {
+  color: #ffe1b7;
+  border-color: rgba(255, 225, 183, 0.9);
+  transform: translateY(-2px);
+}
+
+.SearchBar-sort-options li.active,
+.SearchBar-sort-options li.active:hover {
+  border-color: rgba(255, 193, 99, 0.95);
+  color: #ffd6a1;
+  background: rgba(166, 98, 33, 0.35);
+}
+
+.SearchBar-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.SearchBar-fields input {
+  width: 100%;
+  padding: 0.76rem 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 11px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #18313c;
+  background: rgba(255, 255, 255, 0.93);
+}
+
+.SearchBar-fields input::placeholder {
+  color: rgba(30, 52, 65, 0.66);
+}
+
+.SearchBar-submit {
+  text-align: center;
+}
+
+.SearchBar-submit button {
+  border: 0;
+  border-radius: 999px;
+  min-width: 160px;
+  padding: 0.75rem 1.8rem;
+  background: linear-gradient(135deg, #f09a49, #bd6829);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  box-shadow: 0 12px 24px rgba(130, 67, 24, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.SearchBar-submit button:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 26px rgba(130, 67, 24, 0.45);
+  filter: saturate(1.06);
+}
+
+.SearchBar-submit button:active {
+  transform: translateY(0);
+}
+
+.SearchBar-submit button:disabled {
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.78;
+  box-shadow: 0 10px 20px rgba(130, 67, 24, 0.3);
+}
+
+.SearchBar.is-loading .SearchBar-sort-options li {
+  pointer-events: none;
+  opacity: 0.72;
+}
+
+.SearchBar.is-loading .SearchBar-fields input {
+  opacity: 0.86;
+}
+
+.SearchBar-feedback {
+  margin: 0.1rem 0 0;
+  text-align: center;
+  font-size: 0.83rem;
+  color: rgba(255, 235, 204, 0.9);
+}
+
+@keyframes panel-rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
   }
-  
-  .SearchBar-sort-options ul {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2.22rem;
-    color: #ffffff;
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
-  
-  .SearchBar-sort-options li {
-    cursor: pointer;
-    width: 4.33rem;
-    border-bottom: 1px solid #fff;
-    padding: 0 2.58rem .33rem 2.58rem;
-    line-height: 1.13;
-    text-align: center;
-    font-weight: 600;
-    font-size: .83rem;
-    transition: color .25s;
+}
+
+@media only screen and (max-width: 700px) {
+  .SearchBar {
+    min-height: 25rem;
+    background-image:
+      linear-gradient(rgba(6, 18, 26, 0.62), rgba(8, 27, 35, 0.7)),
+      url("./background_search_mobile.jpg");
   }
-  
-  .SearchBar-sort-options li:hover {
-    color: #d4cfcf;
+
+  .SearchBar h2 {
+    font-size: 1.9rem;
   }
-  
-  .SearchBar-sort-options li.active,
-  .SearchBar-sort-options li.active:hover {
-    border-bottom: 1px solid #f0c36c;
-    color: #f0c36c;
-  }
-  
+
   .SearchBar-fields {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2.88rem;
+    grid-template-columns: 1fr;
   }
-  
-  .SearchBar-fields input {
-    width: 21rem;
-    padding: .66rem 1rem;
-    margin-right: 2.22rem;
-    border: 1px solid #fff;
-    border-radius: 4px;
-    font-size: .77rem;
-    font-weight: 500;
-  }
-  
-  .SearchBar-fields input:last-child {
-    margin-right: 0;
-  }
-  
-  .SearchBar-submit {
-    text-align: center;
-  }
-  
-  .SearchBar-submit a {
-    border-radius: 4px;
-    padding: .72rem 1.7rem;
-    background-color: #cca353;
-    color: #ffffff;
-    font-weight: 600;
-    transition: background-color .5s;
-  }
-  
-  .SearchBar-submit a:hover {
-    cursor: pointer;
-    background-color: #a7874b;
-  }
-  
-  @media only screen and (max-width: 560px) {
-    .SearchBar {
-      background-image: url('./background_search_mobile.jpg');
-    }
-  
-    .SearchBar-sort-options ul {
-      margin-left: 2rem;
-      margin-right: 2rem;
-    }
-  
-    .SearchBar-fields {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .SearchBar-fields input {
-      margin-right: 0;
-      margin-bottom: .86rem;
-    }
-  }
+}

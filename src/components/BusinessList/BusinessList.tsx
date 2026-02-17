@@ -10,7 +10,7 @@ interface BusinessesListProps {
 const BusinessList = ({businesses}: BusinessesListProps) => {
     return (
         <div className="BusinessList">
-            {businesses.map((business, i) => {
+            {businesses.map((business) => {
                 return <Business key={business.id} business={business} />
             })}
         </div>
