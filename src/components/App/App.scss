@@ -290,6 +290,28 @@ input:focus {
   letter-spacing: 0.02em;
 }
 
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  max-width: 1080px;
+  margin: 2.2rem auto 0;
+  padding-top: 0.95rem;
+  border-top: 1px solid rgba(124, 70, 26, 0.2);
+  font-size: 0.78rem;
+  color: rgba(42, 34, 26, 0.76);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer-meta {
+  color: rgba(42, 34, 26, 0.58);
+}
+
 @keyframes slide-up {
   from {
     opacity: 0;
@@ -334,5 +356,10 @@ input:focus {
   .brand-mark {
     width: 56px;
     height: 56px;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    font-size: 0.74rem;
   }
 }

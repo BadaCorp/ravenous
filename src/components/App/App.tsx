@@ -43,6 +43,7 @@ const sortBusinesses = (
 };
 
 export const App = () => {
+  const currentYear = new Date().getFullYear();
   const [rawBusinesses, setRawBusinesses] = useState<BusinessConfig[]>([]);
   const [businesses, setBusinesses] = useState<BusinessConfig[]>([]);
   const [activeSortBy, setActiveSortBy] = useState<SortByOption>("best_match");
@@ -243,6 +244,11 @@ export const App = () => {
       )}
 
       {!isLoading && <BusinessList businesses={businesses} />}
+
+      <footer className="site-footer">
+        <p>© {currentYear} ravenous. Built for local food discovery.</p>
+        <p className="site-footer-meta">Data powered by Yelp Fusion API.</p>
+      </footer>
     </div>
   );
 };
