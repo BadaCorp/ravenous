@@ -2,14 +2,20 @@ import { SetStateAction, useState } from "react";
 import "./SearchBar.scss";
 
 type SearchBarProps = {
-  searchYelp: any;
+  searchYelp: (term: string, location: string) => void;
   isLoading: boolean;
+  sortBy: string;
+  onSortByChange: (sortBy: string) => void;
 };
 
-const SearchBar = ({ searchYelp, isLoading }: SearchBarProps) => {
+const SearchBar = ({
+  searchYelp,
+  isLoading,
+  sortBy,
+  onSortByChange,
+}: SearchBarProps) => {
   const [term, setTerm] = useState("");
   const [location, setLocation] = useState("");
-  const [sortBy, setSortBy] = useState("best_match");
 
   const sortByOptions: { [key: string]: any } = {
     "Best Match": "best_match",
@@ -27,7 +33,7 @@ const SearchBar = ({ searchYelp, isLoading }: SearchBarProps) => {
 
   const handleSortByChange = (sortByOption: string) => {
     if (isLoading) return;
-    setSortBy(sortByOption);
+    onSortByChange(sortByOption);
   };
 
   const handleTermChange = (event: {
@@ -44,7 +50,7 @@ const SearchBar = ({ searchYelp, isLoading }: SearchBarProps) => {
 
   const triggerSearch = () => {
     if (isLoading) return;
-    searchYelp(term, location, sortBy);
+    searchYelp(term, location);
   };
 
   const handleSearch = (event: { preventDefault: () => void }) => {
@@ -104,7 +110,7 @@ const SearchBar = ({ searchYelp, isLoading }: SearchBarProps) => {
       <p className="SearchBar-feedback">
         {isLoading
           ? "Gathering the strongest matches for you..."
-          : "Search by dish, vibe, or business name."}
+          : "Sort options now reorder current results without new API calls."}
       </p>
     </section>
   );

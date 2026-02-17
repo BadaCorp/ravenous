@@ -283,6 +283,13 @@ input:focus {
   color: rgba(42, 34, 26, 0.68);
 }
 
+.results-sort-note {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #7c461a !important;
+  letter-spacing: 0.02em;
+}
+
 @keyframes slide-up {
   from {
     opacity: 0;

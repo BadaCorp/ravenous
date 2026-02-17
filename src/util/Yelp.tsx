@@ -9,11 +9,11 @@ interface Business {
 }
 
 const yelp = {
-  async search(term: string, location: string, sortBy: string) {
+  async search(term: string, location: string) {
     const query = new URLSearchParams({
       term,
       location,
-      sort_by: sortBy,
+      sort_by: "best_match",
     });
 
     const response = await fetch(

@@ -19,8 +19,33 @@ export interface BusinessConfig {
   reviewCount: number;
 }
 
+type SortByOption = "best_match" | "rating" | "review_count";
+
+const sortBusinesses = (
+  items: BusinessConfig[],
+  sortBy: SortByOption,
+): BusinessConfig[] => {
+  const sorted = [...items];
+
+  if (sortBy === "rating") {
+    return sorted.sort(
+      (a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount,
+    );
+  }
+
+  if (sortBy === "review_count") {
+    return sorted.sort(
+      (a, b) => b.reviewCount - a.reviewCount || b.rating - a.rating,
+    );
+  }
+
+  return sorted;
+};
+
 export const App = () => {
+  const [rawBusinesses, setRawBusinesses] = useState<BusinessConfig[]>([]);
   const [businesses, setBusinesses] = useState<BusinessConfig[]>([]);
+  const [activeSortBy, setActiveSortBy] = useState<SortByOption>("best_match");
   const [inputError, setInputError] = useState(false);
   const [serverError, setServerError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -46,7 +71,11 @@ export const App = () => {
     return () => clearInterval(intervalId);
   }, [isLoading]);
 
-  const searchYelp = (term: string, location: string, sortBy: string) => {
+  useEffect(() => {
+    setBusinesses(sortBusinesses(rawBusinesses, activeSortBy));
+  }, [rawBusinesses, activeSortBy]);
+
+  const searchYelp = (term: string, location: string) => {
     const cleanedTerm = term.trim();
     const cleanedLocation = location.trim();
 
@@ -55,6 +84,7 @@ export const App = () => {
     setServerError(false);
 
     if (!cleanedTerm || !cleanedLocation) {
+      setRawBusinesses([]);
       setBusinesses([]);
       setIsLoading(false);
       setInputError(true);
@@ -62,20 +92,32 @@ export const App = () => {
     }
 
     setLastSearch({ term: cleanedTerm, location: cleanedLocation });
+    setRawBusinesses([]);
     setBusinesses([]);
     setLoadProgress(3);
     setIsLoading(true);
-    Yelp.search(cleanedTerm, cleanedLocation, sortBy)
+    Yelp.search(cleanedTerm, cleanedLocation)
       .then((results) => {
-        setBusinesses(results);
+        setRawBusinesses(results);
       })
       .catch(() => {
+        setRawBusinesses([]);
         setBusinesses([]);
         setServerError(true);
       })
       .finally(() => {
         setIsLoading(false);
       });
+  };
+
+  const handleSortByChange = (sortBy: string) => {
+    if (
+      sortBy === "best_match" ||
+      sortBy === "rating" ||
+      sortBy === "review_count"
+    ) {
+      setActiveSortBy(sortBy);
+    }
   };
 
   return (
@@ -95,7 +137,12 @@ export const App = () => {
       </header>
 
       <section className="search-stage">
-        <SearchBar searchYelp={searchYelp} isLoading={isLoading} />
+        <SearchBar
+          searchYelp={searchYelp}
+          isLoading={isLoading}
+          sortBy={activeSortBy}
+          onSortByChange={handleSortByChange}
+        />
       </section>
 
       {isLoading && (
@@ -183,6 +230,14 @@ export const App = () => {
           <p>
             {businesses.length} {businesses.length === 1 ? "place" : "places"}{" "}
             to explore right now
+          </p>
+          <p className="results-sort-note">
+            Sorted by{" "}
+            {activeSortBy === "best_match"
+              ? "Best Match"
+              : activeSortBy === "rating"
+                ? "Highest Rated"
+                : "Most Reviewed"}
           </p>
         </section>
       )}
