@@ -150,7 +150,12 @@ export const App = () => {
         <section className="loading-state" aria-live="polite">
           <div className="loading-headline">
             <div className="loading-progress">
-              <ReactLoading type="spin" color="#f09a49" width={34} height={34} />
+              <ReactLoading
+                type="spin"
+                color="#f09a49"
+                width={34}
+                height={34}
+              />
               <p className="loading-progress-value">{loadProgress}%</p>
             </div>
             <div>
@@ -164,7 +169,7 @@ export const App = () => {
                   ? "Finalizing your results..."
                   : `Estimated warm-up: about ${Math.max(
                       4,
-                      Math.ceil((100 - loadProgress) * 0.6)
+                      Math.ceil((100 - loadProgress) * 0.6),
                     )}s remaining`}
               </p>
             </div>
@@ -187,7 +192,8 @@ export const App = () => {
           <p className="error-msg-center">Missing search details</p>
           <p>
             Enter both a business type and location, for example{" "}
-            <strong>pizza in Toronto</strong> or <strong>sushi in Lisbon</strong>.
+            <strong>pizza in Toronto</strong> or{" "}
+            <strong>sushi in Lisbon</strong>.
           </p>
         </div>
       )}
@@ -196,8 +202,8 @@ export const App = () => {
         <div className="error-msg">
           <p className="error-msg-center">Server unavailable</p>
           <p>
-            Unable to reach the search server right now. It may be waking up,
-            so try again in 30-60 seconds.
+            Unable to reach the search server right now. It may be waking up, so
+            try again in 30-60 seconds.
           </p>
         </div>
       )}
@@ -246,7 +252,7 @@ export const App = () => {
       {!isLoading && <BusinessList businesses={businesses} />}
 
       <footer className="site-footer">
-        <p>© {currentYear} ravenous. Built for local food discovery.</p>
+        <p>© {currentYear} ravenous. Built for local business discovery.</p>
         <p className="site-footer-meta">Data powered by Yelp Fusion API.</p>
       </footer>
     </div>
