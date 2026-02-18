@@ -1,48 +1,98 @@
-<h1 style="font-weight:bold;">Ravenous</h1>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c5ea0837-d85a-4949-88d9-49f7b4d174b5/deploy-status)](https://app.netlify.com/projects/ravenous-guide/deploys)
 
-[![](https://img.shields.io/badge/Chrome%20(CORS)-0.1.6-orange)](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf)
-[![](https://img.shields.io/badge/Mozilla%20(CORS)-18.11.13.2043-blueviolet)](https://addons.mozilla.org/en-CA/firefox/addon/cors-everywhere/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
-[![](https://img.shields.io/badge/Edge%20(CORS)-0.1.6-blue)](https://microsoftedge.microsoft.com/addons/detail/allow-cors-accesscontro/bhjepjpgngghppolkjdhckmnfphffdag)
-[![](https://img.shields.io/badge/Codecademy-PRO-brightgreen)](https://www.codecademy.com/pro/membership?g_network=g&g_device=c&g_adid=528849219352&g_keyword=codecademy%20pro&g_acctid=243-039-7011&g_adtype=search&g_adgroupid=128133970788&g_keywordid=kwd-373216718809&g_campaign=INTL_Brand_Exact&g_campaignid=1726903838&utm_id=t_kwd-373216718809:ag_128133970788:cp_1726903838:n_g:d_c&utm_term=codecademy%20pro&utm_campaign=INTL_Brand_Exact&utm_source=google&utm_medium=paid-search&utm_content=528849219352&hsa_acc=2430397011&hsa_cam=1726903838&hsa_grp=128133970788&hsa_ad=528849219352&hsa_src=g&hsa_tgt=kwd-373216718809&hsa_kw=codecademy%20pro&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=EAIaIQobChMIuoznwrqq8wIVCWpvBB0ZigBvEAAYASABEgIn3vD_BwE)
+# Ravenous
 
-## Table of contents
-* [Demo](#demo)
-  * [Installation](#installation)
-* [How to use](#how-to-use)
-* [Other Information](#other-information)
-* [Credits](#credits)
+A Yelp-like restaurant/business discovery app built with React + TypeScript.
 
-Ravenous is a Codecademy Project of a React app that allows a user to search for businesses in a general location and sort the result (returned by Yelp API) by best match, highest rated, and most reviewed. 
+Users can search by business term and location, then re-sort already loaded results instantly on the client without additional API calls.
 
-## Demo
-Note: The Ravenous app relies on data from the [Yelp Fusion API](https://www.yelp.com/fusion). Unfortunately, the API does not support [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). In order for the Ravenous app to work properly, you will be prompted to navigate to this [link](https://cors-anywhere.herokuapp.com/corsdemo) and click the button to "request temporary access to the demo server".
+## Live Demo
 
-Alternatively, you can install extensions to allow CORS on your browser: [Chrome](https://chrome.google.com/webstore/search/cors?hl=en-US), [Mozilla](https://addons.mozilla.org/en-CA/firefox/search/?q=cors), [Edge](https://microsoftedge.microsoft.com/addons/search/cors?hl=en-US), etc. 
+[ravenous-yelp-like-clone.netlify.app](https://ravenous-yelp-like-clone.netlify.app/)
 
-Online: https://ravenous-yelp-like-clone.netlify.app/
+## Features
+
+- Search businesses by term and location
+- Responsive, card-based UI with custom branding
+- Visual loading states with progress percentage while waiting for API responses
+- Clear empty-state, no-results, and server-error messaging
+- Client-side sorting:
+  - Best Match
+  - Highest Rated
+  - Most Reviewed
+- Footer and polished layout for desktop/mobile
+
+## Tech Stack
+
+- React 17
+- TypeScript
+- Sass (SCSS)
+- `react-loading`
+- Yelp Fusion API (via backend proxy service)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 16+ (18 LTS recommended)
+- npm
 
 ### Installation
 
-- `Clone` the app.
-- Navigate to the app directory.
-- Run the command `npm start` 
+```bash
+git clone https://github.com/BadaCorp/ravenous.git
+cd ravenous
+npm install
+```
 
-The command runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your favorite browser.
+### Run Locally
 
-## How to use
+```bash
+npm start
+```
 
-Once CORS is enabled in your browser, the app should work properly. You, can go ahead and input the name or type of a business in the 'Search Business' input field. Then, input a location to search for these businesses.
+App runs at `http://localhost:3000` by default.
 
-Examples of a valid Business include: Hair Salon, Pizza, Mexican, KFC, Mall, etc. 
+## Available Scripts
 
-Examples of a valid location include: Cancun, Toronto, Etobicoke, United States, Pembina Hwy etc.
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds for production
+- `npm run eject` - Ejects CRA config (irreversible)
 
-You can also sort the result by best match, highest rated, and most reviewed. Don't forget to click on the "Let's Go" button after selecting the sorting criteria.
+If you hit OpenSSL issues during build on newer Node versions, run:
 
-## Other Information
-Due to [bayesian inference](https://en.wikipedia.org/wiki/Bayesian_inference), sorting by 'highest rated' does not work as a user would expect. This is so that a [business with 1 rating of 5 starts does not immediately jump to the top](https://github.com/Yelp/yelp-fusion/issues/24). 
+```bash
+NODE_OPTIONS=--openssl-legacy-provider npm run build
+```
+
+## API Notes
+
+- Frontend request entry point: `src/util/Yelp.tsx`
+- Default API URL:
+  - `https://ravenous-api.onrender.com/yelp`
+- Backend is on a free tier and may sleep after inactivity, causing slower first response.
+- Ensure backend CORS allows your local origin (for example `http://localhost:3000`,).
+
+## Sorting Behavior
+
+To reduce API calls, sorting buttons now reorder the currently displayed result set on the client.  
+A new API request is made only when a new search is submitted.
+
+## Project Structure
+
+```text
+src/
+  components/
+    App/
+    SearchBar/
+    Business/
+    BusinessList/
+  util/
+    Yelp.tsx
+```
 
 ## Credits
-- The project instructions where provided by Codecademy. However, instead of using class components, functional components where used to construct the entire app. Instead of using plain react, typescript was injected to make it easier to debug. Most css file while convert to Sass files. Also, Error messages where included to warn the user about CORS issues or some invalid inputs. 
 
-- Most of the data is retrieve from [Yelp API](https://www.yelp.com/developers/documentation/v3)
+- Original project concept: Codecademy Ravenous project
+- Data source: [Yelp Fusion API](https://www.yelp.com/developers/documentation/v3)
