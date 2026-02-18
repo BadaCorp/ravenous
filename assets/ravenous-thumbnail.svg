@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="70" y1="30" x2="1130" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF6E7"/>
+      <stop offset="1" stop-color="#F1DFC0"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="96" y2="96" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B66A2C"/>
+      <stop offset="1" stop-color="#8E4E1D"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="880" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08273A"/>
+      <stop offset="1" stop-color="#155767"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <circle cx="140" cy="80" r="120" fill="#F0B97A" opacity="0.36"/>
+  <circle cx="1060" cy="84" r="140" fill="#62ACBC" opacity="0.26"/>
+
+  <rect x="70" y="54" width="1060" height="522" rx="32" fill="#FFFEFB" fill-opacity="0.68"/>
+  <rect x="70.5" y="54.5" width="1059" height="521" rx="31.5" stroke="#C6A277" stroke-opacity="0.44"/>
+
+  <g transform="translate(124 104)">
+    <rect width="74" height="74" rx="18" fill="url(#brand)"/>
+    <path d="M19 27C19 25.3431 20.3431 24 22 24H37C44.732 24 51 30.268 51 38V38C51 45.732 44.732 52 37 52H22C20.3431 52 19 50.6569 19 49V27Z" fill="#FFF9F0"/>
+    <path d="M40 25H56C57.6569 25 59 26.3431 59 28V48C59 49.6569 57.6569 51 56 51H40V25Z" fill="#16697A"/>
+    <path d="M29 33H37C39.7614 33 42 35.2386 42 38V38C42 40.7614 39.7614 43 37 43H29V33Z" fill="#F4A259"/>
+    <circle cx="49.5" cy="38" r="5.5" fill="#FFF9F0"/>
+  </g>
+
+  <text x="218" y="160" fill="#8E4E1D" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="64" font-weight="700">ravenous</text>
+  <text x="124" y="212" fill="#65503A" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="24">Find places worth craving</text>
+
+  <g transform="translate(160 248)">
+    <rect width="880" height="260" rx="28" fill="url(#hero)"/>
+    <rect x="0.5" y="0.5" width="879" height="259" rx="27.5" stroke="#8EC1CB" stroke-opacity="0.38"/>
+
+    <text x="440" y="56" text-anchor="middle" fill="#D1ECF1" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="18" letter-spacing="2.2">SEARCH</text>
+    <text x="440" y="108" text-anchor="middle" fill="#F4FBFD" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="50" font-weight="600">Local Favorites</text>
+
+    <rect x="248" y="126" width="126" height="40" rx="20" fill="#C68138"/>
+    <rect x="388" y="126" width="126" height="40" rx="20" fill="#103D4A" stroke="#9AC5CE"/>
+    <rect x="528" y="126" width="126" height="40" rx="20" fill="#103D4A" stroke="#9AC5CE"/>
+    <text x="311" y="152" text-anchor="middle" fill="white" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="20" font-weight="600">Best</text>
+    <text x="451" y="152" text-anchor="middle" fill="#D7EEF2" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="20">Rated</text>
+    <text x="591" y="152" text-anchor="middle" fill="#D7EEF2" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="20">Reviews</text>
+
+    <rect x="118" y="180" width="290" height="54" rx="12" fill="white"/>
+    <rect x="472" y="180" width="290" height="54" rx="12" fill="white"/>
+    <text x="140" y="214" fill="#59646A" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="26">Salon</text>
+    <text x="494" y="214" fill="#59646A" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="26">Toronto</text>
+
+    <rect x="375" y="184" width="130" height="54" rx="27" fill="#C67A33"/>
+    <text x="440" y="218" text-anchor="middle" fill="white" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Go</text>
+  </g>
+
+  <text x="124" y="548" fill="#6D5741" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="22">Portfolio Thumbnail</text>
+</svg>

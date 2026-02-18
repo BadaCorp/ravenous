@@ -8,7 +8,7 @@ Users can search by business term and location, then re-sort already loaded resu
 
 ## Live Demo
 
-[ravenous-yelp-like-clone.netlify.app](https://ravenous-yelp-like-clone.netlify.app/)
+[https://ravenous-guide.netlify.app/](https://ravenous-yelp-like-clone.netlify.app/)
 
 ## Features
 
