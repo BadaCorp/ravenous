@@ -27,6 +27,16 @@ const Business = ({ business }: BusinesssProps) => {
             <p>{business.reviewCount} reviews</p>
           </div>
         </div>
+        {business.url && (
+          <a
+            className="Business-yelp-link"
+            href={business.url}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            View Yelp reviews
+          </a>
+        )}
       </div>
     </article>
   );

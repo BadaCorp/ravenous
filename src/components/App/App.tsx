@@ -10,6 +10,7 @@ export interface BusinessConfig {
   id: string;
   imageSrc: string;
   name: string;
+  url: string;
   address: string;
   city: string;
   state: string;

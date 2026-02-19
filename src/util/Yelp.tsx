@@ -2,6 +2,7 @@ interface Business {
   id: string;
   image_url: string;
   name: string;
+  url: string;
   location: Record<string, any>;
   categories: Record<string, any>[];
   rating: number;
@@ -35,6 +36,7 @@ const yelp = {
         id: business.id,
         imageSrc: business.image_url,
         name: business.name,
+        url: business.url ?? "",
         address: business.location?.address1 ?? "",
         city: business.location?.city ?? "",
         state: business.location?.state ?? "",
